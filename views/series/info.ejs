@@ -1,0 +1,47 @@
+<%- include('../partials/header'); -%>
+
+
+<section id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2><%= serie.name %></h2>
+          <p class="lead">Comentários sobre o filme    </p>
+          
+          
+          <form method="POST">
+            
+           
+
+            <div class="form-group">
+                <label for="comentario">Deixe seu Comentário</label>
+                <textarea class="form-control" id="comentario" name="comentario" rows="1" required></textarea>
+              </div>
+            
+
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+
+            </form>
+            
+            <hr>
+            <ul class="list-group">
+            <% serie.comments.forEach( c => { %>
+
+              
+             <li class="list-group-item"> <%= c %> </li>
+                    
+                
+
+            <%  }) %>
+        </ul>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+ 
+
+
+
+<%- include('../partials/footer'); -%>
