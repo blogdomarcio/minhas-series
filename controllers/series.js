@@ -36,7 +36,7 @@ const novaForm = (req, res) => {
 }
 
 const excluirSerie = async ({ Serie }, req, res) => {
-    await Serie.remove({ _id: req.params.id })
+    await Serie.deleteOne({ _id: req.params.id })
     res.redirect('/series')
 }
 
