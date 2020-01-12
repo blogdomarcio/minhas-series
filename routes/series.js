@@ -15,7 +15,6 @@ router.post('/nova', seriesController.novaProcess.bind(null, models))
 
 router.get('/excluir/:id', seriesController.excluirSerie.bind(null, models))
 
-
 router.get('/editar/:id', seriesController.editarForm.bind(null, models))
 router.post('/editar/:id', seriesController.editarProcess.bind(null, models))
 

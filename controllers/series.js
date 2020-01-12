@@ -5,14 +5,10 @@ const labels = [
     { id: 'to-watched', name: 'Para Assistir'}
 ]
 
-
 const index = async({ Serie }, req, res) => {
     const series = await Serie.find({})
     res.render('series/index', { series, labels })
 }
-
-
-
 
 const novaProcess = async({ Serie }, req, res) => {
     const serie =  new Serie(req.body)
@@ -24,8 +20,7 @@ const novaProcess = async({ Serie }, req, res) => {
         res.render('series/nova', {
             errors: Object.keys(e.errors)
         })
-    }
-    
+    } 
     
 }
 
@@ -40,8 +35,6 @@ const excluirSerie = async ({ Serie }, req, res) => {
     res.redirect('/series')
 }
 
-
-
 const editarProcess =  async({ Serie }, req, res) => {
 
     const serie = await Serie.findOne({ _id: req.params.id } )
@@ -52,9 +45,7 @@ const editarProcess =  async({ Serie }, req, res) => {
             res.redirect('/series')
         }catch(e){
             res.render('series/editar', { serie, labels, errors: Object.keys(e.errors)})    
-        }
-       
-    
+        }   
 }
 
 const editarForm =  async ({ Serie }, req, res) => {
@@ -77,7 +68,6 @@ const addComentario = async({ Serie }, req, res) => {
     res.redirect('/series/info/' + req.params.id)
 
 }
-
 
 module.exports = {
     index,
